@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition"
+        xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+	<DataSets>
+		<DataSet Name="AppointmentDataSet">
+			<Fields>
+				<Field Name="AppointmentDate">
+					<DataField>AppointmentDate</DataField>
+					<rd:TypeName>System.DateTime</rd:TypeName>
+				</Field>
+				<Field Name="TimeSlot">
+					<DataField>TimeSlot</DataField>
+					<rd:TypeName>System.String</rd:TypeName>
+				</Field>
+				<Field Name="PatientLastName">
+					<DataField>PatientLastName</DataField>
+					<rd:TypeName>System.String</rd:TypeName>
+				</Field>
+				<Field Name="DoctorLastName">
+					<DataField>DoctorLastName</DataField>
+					<rd:TypeName>System.String</rd:TypeName>
+				</Field>
+				<Field Name="Status">
+					<DataField>Status</DataField>
+					<rd:TypeName>System.String</rd:TypeName>
+				</Field>
+				<Field Name="ConsultationFee">
+					<DataField>ConsultationFee</DataField>
+					<rd:TypeName>System.Decimal</rd:TypeName>
+				</Field>
+				<Field Name="Notes">
+					<DataField>Notes</DataField>
+					<rd:TypeName>System.String</rd:TypeName>
+				</Field>
+			</Fields>
+			<Query>
+				<DataSourceName>DataSource1</DataSourceName>
+				<CommandText />
+			</Query>
+		</DataSet>
+	</DataSets>
+	<Body>
+		<ReportItems>
+			<Table Name="AppointmentTable">
+				<DataSetName>AppointmentDataSet</DataSetName>
+				<Header>
+					<TableRows>
+						<TableRow>
+							<Height>0.25in</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="hDate">
+											<Value>Date</Value>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="hTime">
+											<Value>Time</Value>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="hPatient">
+											<Value>Patient</Value>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="hDoctor">
+											<Value>Doctor</Value>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="hStatus">
+											<Value>Status</Value>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="hFee">
+											<Value>Fee</Value>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+					</TableRows>
+				</Header>
+				<Details>
+					<TableRows>
+						<TableRow>
+							<Height>0.25in</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="dDate">
+											<Value>=Fields!AppointmentDate.Value</Value>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="dTime">
+											<Value>=Fields!TimeSlot.Value</Value>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="dPatient">
+											<Value>=Fields!PatientLastName.Value</Value>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="dDoctor">
+											<Value>=Fields!DoctorLastName.Value</Value>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="dStatus">
+											<Value>=Fields!Status.Value</Value>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="dFee">
+											<Value>=Fields!ConsultationFee.Value</Value>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+					</TableRows>
+				</Details>
+				<TableColumns>
+					<TableColumn>
+						<Width>1.2in</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>1in</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>1.2in</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>1.2in</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>1in</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>0.8in</Width>
+					</TableColumn>
+				</TableColumns>
+			</Table>
+		</ReportItems>
+		<Height>1in</Height>
+	</Body>
+</Report>
